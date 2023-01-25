@@ -18,8 +18,6 @@ class LoadCsvTest {
                     Paths.get(".","no-modules","rtg000","mailList.txt"), StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND)){
                     writer.write(st.nextToken() + "@mail.com" + " : " +st.nextToken());
                     writer.newLine();
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
             }
         } catch (IOException e) {
