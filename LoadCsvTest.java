@@ -10,12 +10,12 @@ import java.util.StringTokenizer;
 class LoadCsvTest {
     public static void main(String[] args) {
         
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get(".", "no-modules", "rtg000", "mailList.csv"))) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(".", "mailList.csv"))) {
             String line = "";
             while ((line = reader.readLine()) != null) {
                 StringTokenizer st = new StringTokenizer(line, ",",false);
                 try (BufferedWriter writer = Files.newBufferedWriter(
-                    Paths.get(".","no-modules","rtg000","mailList.txt"), StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND)){
+                    Paths.get(".","mailList.txt"), StandardCharsets.UTF_8, StandardOpenOption.CREATE, StandardOpenOption.APPEND)){
                     writer.write(st.nextToken() + "@mail.com" + " : " +st.nextToken());
                     writer.newLine();
                 }
